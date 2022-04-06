@@ -1,0 +1,88 @@
+.choice-container {
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgb(86, 165, 235, 0.25);
+    background-color: white;
+  }
+  
+  .choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+  }
+  
+  .choice-prefix {
+    padding: 1.5rem 2.5rem;
+    background-color: #364F6B;
+    color: white;
+  }
+  
+  .choice-text {
+    padding: 1.5rem;
+    width: 100%;
+  }
+  
+  .correct {
+    background-color: #28a745;
+  }
+  
+  .incorrect {
+    background-color: #dc3545;
+  }
+  
+  /* HUD */
+  
+  #hud {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .hud-prefix {
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  .hud-main-text {
+    text-align: center;
+  }
+  
+  #progressBar {
+    width: 20rem;
+    height: 4rem;
+    border: 0.3rem solid #364F6B;
+    margin-top: 1.5rem;
+  }
+  
+  #progressBarFull {
+    height: 3.7rem;
+    background-color: #364F6B;
+    width: 0%;
+  }
+
+  .timer-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-between
+  }
+  
+  #timerText{
+    color: #316b9d;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    margin-right: 0.2rem;
+  }
+  #timerBar{
+    width: 65rem;
+    height: 0.8rem;
+    border: 0.1rem solid #364F6B;
+    margin-top: 0.7rem;
+    
+  }
+
+  #timerBarFull{
+    height:0.6rem;
+    width: 0%;
+  }
