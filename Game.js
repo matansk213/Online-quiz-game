@@ -10,8 +10,8 @@ const timerBarFull = document.getElementById('timerBarFull');
 
 let choices = Array.from(document.getElementsByClassName('choice-text'));
 
-const CORRECT_SCORE = 10;
 const MAX_QUESTIONS = 10;
+const CORRECT_SCORE = 10;
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -21,8 +21,6 @@ let availableQuesions = [];
 
 //TODO CHANGE LOOKS AND VARIABLES!!!!!!!!!!!! 
 //TODO bonus points based on time left on timer
-//TODO add feature - Tips \ Lifelines that appear during the question and may affect the score (50/50, time extensions, etc.)
-//TODO game statistics bsed on category
 let questions = [];
 
 fetch(questions_url).then(res => res.json())
@@ -55,14 +53,14 @@ let defualt_timer = 15;
 let counterBar;
 let defualt_timer_bar = 0;
 
-startGame = () => {
+function startGame() {
     questionCounter = 0;
     score = 0;
     availableQuesions = [...questions];
     getNewQuestion();
-};
+}
 
-getNewQuestion = () => {
+function getNewQuestion(){
     clearInterval(counter);
     startTimer(defualt_timer);
     clearInterval(counterBar);
@@ -101,7 +99,7 @@ getNewQuestion = () => {
 
     availableQuesions.splice(questionIndex, 1);
     acceptingAnswers = true;
-};
+}
 
 choices.forEach((choice) => {
     choice.addEventListener('click', (e) => {
@@ -124,10 +122,10 @@ choices.forEach((choice) => {
     });
 });
 
-incrementScore = (num) => {
+function incrementScore(num){
     score += num;
     scoreText.innerText = score;
-};
+}
 
 function textReplacer(clearString){
     return clearString.replace(/&amp;/g, '&')
