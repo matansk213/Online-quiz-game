@@ -1,23 +1,5 @@
+//fetching questions
 const questions_url = "https://opentdb.com/api.php?amount=100";
-const question = document.getElementById('question');
-const choice3 = document.getElementById('multiplyChoice3');
-const choice4 = document.getElementById('multiplyChoice4');
-const scoreText = document.getElementById('score');
-const progressText = document.getElementById('progressText');
-const progressBarFull = document.getElementById('progressBarFull');
-const timerText = document.getElementById('timerText');
-const timerBarFull = document.getElementById('timerBarFull');
-
-let choices = Array.from(document.getElementsByClassName('choice-text'));
-
-const MAX_QUESTIONS = 10;
-const CORRECT_SCORE = 10;
-let currentQuestion = {};
-let acceptingAnswers = false;
-let score = 0;
-let questionCounter = 0;
-let availableQuesions = [];
-
 
 let questions = [];
 
@@ -46,18 +28,31 @@ fetch(questions_url).then(res => res.json())
         console.error(err);
     });
 
+//game mechanics
+//consts and declares
+const question = document.getElementById('question');
+const choice3 = document.getElementById('multiplyChoice3');
+const choice4 = document.getElementById('multiplyChoice4');
+const scoreText = document.getElementById('score');
+const progressText = document.getElementById('progressText');
+const progressBarFull = document.getElementById('progressBarFull');
+const timerText = document.getElementById('timerText');
+const timerBarFull = document.getElementById('timerBarFull');
+
+let choices = Array.from(document.getElementsByClassName('choice-text'));
+
+const MAX_QUESTIONS = 10;
+const CORRECT_SCORE = 10;
+let currentQuestion = {};
+let acceptingAnswers = false;
+let score = 0;
+let questionCounter = 0;
+let availableQuesions = [];
 
 let counter;
 let defualt_timer = 15;
 let counterBar;
 let defualt_timer_bar = 0;
-
-function startGame() {
-    questionCounter = 0;
-    score = 0;
-    availableQuesions = [...questions];
-    getNewQuestion();
-}
 
 function getNewQuestion(){
     clearInterval(counter);
@@ -119,25 +114,19 @@ choices.forEach((choice) => {
     });
 });
 
+function startGame() {
+    questionCounter = 0;
+    score = 0;
+    availableQuesions = [...questions];
+    getNewQuestion();
+}
+
+
 function incrementScore(num){
     score += num;
     scoreText.innerText = score;
 }
 
-function textReplacer(clearString){
-    return clearString
-    .replace(/&amp;/g, '&')
-    .replace(/&rsquo;/g, "`")
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&#039;/g, "'")
-    .replace(/&eacute;/g, "é")
-    .replace(/&oacute;/g, "ó")
-    .replace(/&uuml;/g, "ü")
-    .replace(/&ouml;/g, "ö")
-    .replace(/&rdquo;/g, "”")
-    .replace(/&ldquo/g, "“");
-}
 
 function startTimer(time){
     counter = setInterval(timer, 1000);
@@ -171,3 +160,18 @@ function startTimerBar(time){
     }
 }
 
+
+function textReplacer(clearString){
+    return clearString
+    .replace(/&amp;/g, '&')
+    .replace(/&rsquo;/g, "`")
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'")
+    .replace(/&eacute;/g, "é")
+    .replace(/&oacute;/g, "ó")
+    .replace(/&uuml;/g, "ü")
+    .replace(/&ouml;/g, "ö")
+    .replace(/&rdquo;/g, "”")
+    .replace(/&ldquo/g, "“");
+}

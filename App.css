@@ -1,5 +1,5 @@
 :root{
-    background-color: #c4d7ec;
+    background-color: #A2B38B;
     font-size: 62.5%;
 }
 *{
@@ -7,14 +7,14 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
+    color: #000000;
 }
 h1, h2, h3, h4{
     margin-bottom: 1rem;
 }
 h1{
     font-size: 5rem;
-    color: #364F6B;
+    color: #000000;
     margin-bottom: 3.5rem;
     
 }
@@ -33,7 +33,6 @@ h3{
     font-weight: 500;
 }
 
-/* UTILITIES */
 
 .container{
     width: 100vw;
@@ -77,11 +76,12 @@ h3{
     padding: 1rem 0;
     width: 20rem;
     text-align: center;
-    border: 0.1rem solid #364F6B;
+    border: 0.1rem solid #52057B;
     margin-bottom: 1rem;
     text-decoration: none;
-    color: #364F6B;
+    color: #52057B;
     background-color: white;
+    border-radius: 12px;
   }
   
   .btn:hover {
@@ -96,13 +96,14 @@ h3{
     box-shadow: none;
     transform: none;
   }
-  /*Forms*/
+
  
 form{
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 input{
@@ -112,11 +113,10 @@ input{
   font-size: 1.8rem;
   border: none;
   box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5) ;
+  border-radius: 12px;
 }
 
 input::placeholder{
   color: #aaa;
+  text-align: center;
 }
-
-
-

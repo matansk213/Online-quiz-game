@@ -5,6 +5,7 @@
     font-size: 1.8rem;
     border: 0.1rem solid rgb(86, 165, 235, 0.25);
     background-color: white;
+    border-radius: 12px;
   }
   
   .choice-container:hover {
@@ -16,8 +17,9 @@
   
   .choice-prefix {
     padding: 1.5rem 2.5rem;
-    background-color: #364F6B;
+    background-color: #52057B;
     color: white;
+    border-radius: 12px;
   }
   
   .choice-text {
@@ -52,13 +54,13 @@
   #progressBar {
     width: 20rem;
     height: 4rem;
-    border: 0.3rem solid #364F6B;
+    border: 0.3rem solid #52057B;
     margin-top: 1.5rem;
   }
   
   #progressBarFull {
     height: 3.7rem;
-    background-color: #364F6B;
+    background-color: #52057B;
     width: 0%;
   }
 
@@ -69,7 +71,7 @@
   }
   
   #timerText{
-    color: #316b9d;
+    color: #000000;
     font-size: 1.8rem;
     margin-bottom: 0.8rem;
     margin-right: 0.2rem;
@@ -77,12 +79,14 @@
   #timerBar{
     width: 65rem;
     height: 0.8rem;
-    border: 0.1rem solid #364F6B;
+    border: 0.1rem solid #000000;
     margin-top: 0.7rem;
+    border-radius: 12px;
     
   }
 
   #timerBarFull{
     height:0.6rem;
     width: 0%;
+    border-radius: 12px;
   }
