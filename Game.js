@@ -111,14 +111,12 @@ choices.forEach((choice) => {
         const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
 
         if (classToApply === 'correct') incrementScore(CORRECT_SCORE);
-        
-
         selectedChoice.parentElement.classList.add(classToApply);
 
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
-        }, 100);
+        }, 150);
     });
 });
 
