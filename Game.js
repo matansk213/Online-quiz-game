@@ -19,8 +19,6 @@ let questionCounter = 0;
 let availableQuesions = [];
 
 
-//TODO CHANGE LOOKS AND VARIABLES!!!!!!!!!!!! 
-//TODO bonus points based on time left on timer
 let questions = [];
 
 fetch(questions_url).then(res => res.json())
@@ -108,7 +106,7 @@ choices.forEach((choice) => {
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
-        const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+        const classToApply = (selectedAnswer == currentQuestion.answer) ? 'correct' : 'incorrect';
 
         if (classToApply === 'correct') incrementScore(CORRECT_SCORE);
         selectedChoice.parentElement.classList.add(classToApply);
@@ -134,7 +132,9 @@ function textReplacer(clearString){
     .replace(/&eacute;/g, "é")
     .replace(/&oacute;/g, "ó")
     .replace(/&uuml;/g, "ü")
-    .replace(/&ouml;/g, "ö");
+    .replace(/&ouml;/g, "ö")
+    .replace(/&rdquo;/g, "”")
+    .replace(/&ldquo/g, "“");
 }
 
 function startTimer(time){
@@ -168,3 +168,4 @@ function startTimerBar(time){
         }
     }
 }
+
