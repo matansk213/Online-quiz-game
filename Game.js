@@ -30,12 +30,13 @@ fetch(questions_url).then(res => res.json())
                                      type:loadedQuestion.type,
                                      category:loadedQuestion.category,
                                      difficulty:loadedQuestion.difficulty};
+
             formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
-            
             const answerChoices = [...loadedQuestion.incorrect_answers];
             answerChoices.splice(formattedQuestion.answer - 1,0,loadedQuestion.correct_answer);
             answerChoices.forEach((choice, index) => {
                 formattedQuestion['choice' + (index + 1)] = choice;
+                //choice(1-4) = one of the choices
             });
             return formattedQuestion;
         });
@@ -107,7 +108,7 @@ choices.forEach((choice) => {
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
         const classToApply = (selectedAnswer == currentQuestion.answer) ? 'correct' : 'incorrect';
-
+        
         if (classToApply === 'correct') incrementScore(CORRECT_SCORE);
         selectedChoice.parentElement.classList.add(classToApply);
 
@@ -124,7 +125,8 @@ function incrementScore(num){
 }
 
 function textReplacer(clearString){
-    return clearString.replace(/&amp;/g, '&')
+    return clearString
+    .replace(/&amp;/g, '&')
     .replace(/&rsquo;/g, "`")
     .replace(/&amp;/g, '&')
     .replace(/&quot;/g, '"')
